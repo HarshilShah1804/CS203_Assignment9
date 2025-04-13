@@ -1,0 +1,21 @@
+metadata:
+  name: cs203-jovyan
+spec:
+  functions:
+  - url: ./load_data.py
+    name: load-breast-cancer-data
+    kind: job
+    image: mlrun/mlrun
+  - url: trainer.py
+    name: trainer
+    kind: job
+    image: mlrun/mlrun
+    handler: train
+  - url: serving.py
+    name: serving
+    kind: serving
+    image: mlrun/mlrun
+  source: ''
+  desired_state: online
+  conda: ''
+kind: project
