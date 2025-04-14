@@ -6,7 +6,7 @@ def pipeline(model_name="breast_cancer_classifier"):
 
     # Load breast cancer dataset
     ingest = mlrun.run_function(
-        "load-breast-cancer-data",  # this should match your function name in MLRun
+        "load-breast-cancer-data",  
         name="load-breast-cancer-data",
         params={"format": "csv"},
         outputs=["dataset", "label_column"],
@@ -36,5 +36,5 @@ def pipeline(model_name="breast_cancer_classifier"):
                 "class_name": "ClassifierModel"
             }
         ],
-        mock=True  # set to False for real deployment
+        mock=False 
     )

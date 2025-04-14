@@ -7,7 +7,7 @@ def breast_cancer_loader(context, format="csv"):
 
     data = load_breast_cancer(as_frame=True)
     df = data.frame
-    df['target'] = data.target  # just in case it's not included
+    df['target'] = data.target  
 
     context.logger.info('Saving breast cancer dataset to {}'.format(context.artifact_path))
     context.log_dataset('breast_cancer_dataset', df=df, format=format, index=False)

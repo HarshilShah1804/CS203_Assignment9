@@ -1,6 +1,6 @@
-metadata:
-  name: cs203-jovyan
+kind: project
 spec:
+  origin_url: git://github.com/HarshilShah1804/CS203_Assignment9.git#refs/heads/main
   functions:
   - url: ./load_data.py
     name: load-breast-cancer-data
@@ -15,7 +15,8 @@ spec:
     name: serving
     kind: serving
     image: mlrun/mlrun
-  source: ''
-  desired_state: online
+  source: git://github.com/HarshilShah1804/CS203_Assignment9.git#refs/heads/main
   conda: ''
-kind: project
+  desired_state: online
+metadata:
+  name: cs203-jovyan

@@ -8,7 +8,7 @@ def train(
     label_column: str = 'target',
     n_estimators: int = 100,
     max_depth: int = None,
-    max_features: str = 'sqrt',  # or 'log2' for better speed/performance balance
+    max_features: str = 'sqrt',  
     model_name: str = "breast_cancer_rf"
 ):
     # Load dataset
@@ -19,7 +19,6 @@ def train(
     # Split into train/test
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
-    # Define model with optimal CPU settings
     model = RandomForestClassifier(
         n_estimators=n_estimators,
         max_depth=max_depth,
